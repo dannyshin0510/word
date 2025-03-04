@@ -16,7 +16,7 @@ export const HomePage: React.FC = () => {
       }}
     >
       <Typography variant="h2" component="h1" gutterBottom>
-        welcome to wurd!
+        welcome to daily bakery!
       </Typography>
       <Typography variant="h5" color="primary" paragraph>
         Play daily.

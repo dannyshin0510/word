@@ -17,7 +17,7 @@ const AboutPage: React.FC = () => {
       }}
     >
       <Typography variant="h2" component="h1" gutterBottom>
-        Welcome to Wurd!
+        Welcome to Daily Bakery!
       </Typography>
       <Typography variant="h5" color="textSecondary" paragraph>
         Discover amazing features and explore what we have to offer.
