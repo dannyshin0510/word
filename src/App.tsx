@@ -1,19 +1,19 @@
 // App.tsx
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Button, AppBar, Toolbar, Typography } from '@mui/material';
-import {HomePage} from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import GamePage from './pages/GamePage'
-import ContactPage from './pages/ContactPage';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Button, AppBar, Toolbar, Typography } from "@mui/material";
+import { HomePage } from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import GamePage from "./pages/GamePage";
+import ContactPage from "./pages/ContactPage";
 
 const App: React.FC = () => {
   return (
     <Router>
-      <AppBar position="sticky">
+      <AppBar position="absolute" sx={{ backgroundColor: "#1a1a1a" }}>
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Wurd
+            Word Hero
           </Typography>
           <Button color="inherit" component={Link} to="/">
             Home

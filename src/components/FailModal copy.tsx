@@ -9,37 +9,28 @@ import {
   Link,
 } from "@mui/material";
 
-import { styled } from "styled-components";
-
 import { TransitionProps } from "@mui/material/transitions";
 import Slide from "@mui/material/Slide";
 import { createSvgIcon } from "@mui/material";
 
-const GreenCheckCircleIcon = createSvgIcon(
+const RedCrossCircleIcon = createSvgIcon(
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     width="24"
     height="24"
   >
-    <circle
-      cx="12"
-      cy="12"
-      r="10"
-      stroke="green"
-      strokeWidth="2"
-      fill="white"
-    />
+    <circle cx="12" cy="12" r="10" stroke="red" strokeWidth="2" fill="white" />
     <path
-      d="M9 12l2 2 4-4"
-      stroke="green"
+      d="M9 9l6 6M15 9l-6 6"
+      stroke="red"
       strokeWidth="2"
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
   </svg>,
-  "GreenCheckCircle"
+  "RedCrossCircle"
 );
 
 const Transition = React.forwardRef(function Transition(
@@ -51,34 +42,7 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const StyledDialog = styled(Dialog)`
-  .MuiDialogPaper {
-    background-color: #4caf50; /* A rich green background for success */
-    color: white; /* White text for contrast */
-    border-radius: 16px; /* Rounded corners for a smooth look */
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
-    padding: 24px; /* More space around the content */
-    max-width: 600px; /* Set a maximum width */
-  }
-
-  .MuiDialogTitle-root {
-    background-color: #388e3c;
-    text-align: center;
-    padding: 16px;
-  }
-
-  .MuiDialogContent-root {
-    padding: 24px;
-    background-color: #388e3c;
-  }
-
-  .MuiDialogActions-root {
-    background-color: #388e3c;
-    padding: 16px;
-  }
-`;
-
-export const SuccessModal: React.FC<{
+export const FailModal: React.FC<{
   handleClose: () => void;
   open: boolean;
   word: string;
@@ -88,8 +52,8 @@ export const SuccessModal: React.FC<{
   return (
     <Dialog TransitionComponent={Transition} open={open} onClose={handleClose}>
       <DialogTitle align="center">
-        <GreenCheckCircleIcon sx={{ fontSize: 70 }} />
-        <Typography variant="h5">Congratulations</Typography>
+        <RedCrossCircleIcon sx={{ fontSize: 70 }} />
+        <Typography variant="h4">You Failed!</Typography>
       </DialogTitle>
       <DialogContent>
         <Typography variant="body1" sx={{ marginBottom: 2 }}>
